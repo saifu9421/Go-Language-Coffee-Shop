@@ -72,9 +72,9 @@ type Coffee struct{
 		  };
    };
 
-    var totalAmount float64 = 0.00;
-	 for _,price := range parcess{
-		 totalAmount =  float64(price.price + price.price);
+    var totalAmount int;
+	 for _,cof := range parcess{
+		 totalAmount += cof.price; 
 	 };
 
 fmt.Println("Item Name        Price        Quantity        Amount");
