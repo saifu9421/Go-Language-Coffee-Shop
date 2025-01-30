@@ -13,6 +13,7 @@ type Coffee struct{
   func main(){
 	var arr []int;
 	var sum int  = 0;
+	var priceArray []int;
 	coffeeList := map[int]Coffee{
 		1:{
 		 name: "Hot Coffee",
@@ -54,6 +55,7 @@ type Coffee struct{
 							    if key == userInput{
 								   parcess[userInput] = coffeeList[key];
 								   arr = append(arr, key);
+								   priceArray = append(priceArray, coffeeList[key].price);
 								//    countParcessCoffee[sum] = parcess[userInput].name;
 								sum++;
 								}
@@ -72,9 +74,13 @@ type Coffee struct{
 		  };
    };
 
-    var totalAmount int;
-	 for _,cof := range parcess{
-		 totalAmount += cof.price; 
+    var totalAmount int = 0;
+	//  for _,cof := range parcess{
+	// 	 totalAmount += cof.price; 
+	//  };
+	// fmt.Println(priceArray);
+	 for i := 0;i<len(priceArray);i++{
+		    totalAmount += priceArray[i];
 	 };
 
 fmt.Println("Item Name        Price        Quantity        Amount");
@@ -87,4 +93,5 @@ fmt.Println("----------------------------------------------",totalAmount);
 //   fmt.Println(x);
 // fmt.Println(countParcessCoffee);
  fmt.Println(x);
+//   fmt.Println(arr);
   }
